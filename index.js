@@ -6,6 +6,7 @@
  */
 
 const fs = require('fs')
+    , mkdir = require('mkdirp')
 
 module.exports = {
 
@@ -36,6 +37,33 @@ module.exports = {
      */
     fileExists: function (file) {
         return file && fs.existsSync(file) && fs.lstatSync(file).isFile()
+    },
+
+    /**
+     * Check if file exists.
+     *
+     * @param file
+     * @returns {*}
+     */
+    isDirectory: function (dir) {
+        return dir && fs.existsSync(dir) && fs.lstatSync(dir).isDirectory()
+    },
+
+    /**
+     *
+     * @param dir
+     */
+    mkdir: function (dir) {
+        if (!fs.existsSync(dir)) {
+            return mkdir.sync(dir)
+        }
+    },
+
+    /**
+     *
+     */
+    exists: function (file) {
+        return fs.existsSync(file)
     },
 
     /**
