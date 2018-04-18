@@ -1,1 +1,2 @@
-# node-fu
+# NodeJS File System Utility
+
