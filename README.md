@@ -18,7 +18,7 @@ const fu = require('nodejs-fu');
 ### fu.readFile(path[, options])
 
  - **Inputs**:
-   - `path`: the file path
+   - `path`: filename or file descriptor
    - `options`: https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options
  - **Returns**: a string with contents of file 
  
