@@ -16,10 +16,10 @@ const fu = require('nodejs-fu');
 
 ### fu.readFile(path[, options])
 
-- **Inputs:**
+- Inputs:
   - 
   -
-- **Returns:**
+- Returns:
   -
   
   
