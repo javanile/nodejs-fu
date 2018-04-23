@@ -16,11 +16,11 @@ const fu = require('nodejs-fu');
 
 ## fu.readFile
 
-- Inputs:
-  - 
-  -
-- Returns:
-  -
+ - Inputs:
+   - 
+   -
+ - Returns:
+   -
   
   
 
