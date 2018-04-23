@@ -1,6 +1,6 @@
 # NodeJS File System Utility
 
-Comfortable utility to read and write file orientata alla programmazione rapida di in script in NodeJS
+Comfortable utility to read and write files, oriented to agile and synchronous programming of scripts in NodeJS.
 
 ## Install
 
@@ -8,7 +8,7 @@ Comfortable utility to read and write file orientata alla programmazione rapida 
 npm install nodejs-fu --save
 ```
 
-## API Documentations
+## API Documentation
 
 ```bash
 const fu = require('nodejs-fu');
@@ -16,7 +16,13 @@ const fu = require('nodejs-fu');
 
 ### fu.readFile(path[, options])
 
-
+- **Inputs:**
+  - 
+  -
+- **Returns:**
+  -
+  
+  
 
 
 
