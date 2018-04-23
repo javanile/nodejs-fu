@@ -14,7 +14,7 @@ npm install nodejs-fu --save
 const fu = require('nodejs-fu');
 ```
 
-## fu.readFileprore
+## fu.readFile(path[, options])
 
  - Inputs:
  - Returns:
