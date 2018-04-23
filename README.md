@@ -16,6 +16,7 @@ const fu = require('nodejs-fu');
 
 ## fu.readFile
 
+prore 
  - Inputs:
    - 
    -
