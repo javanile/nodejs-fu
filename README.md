@@ -11,14 +11,14 @@ npm install nodejs-fu --save
 
 ## API Documentation
 
-```bash
+```javascript
 const fu = require('nodejs-fu');
 ```
 
 ### fu.readFile(path[, options])
 
- - **Inputs**:
+ - Inputs:
    - `path`: filename or file descriptor
    - `options`: https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options
- - **Returns**: a string with contents of file 
+ - Returns: a string with contents of file 
  
