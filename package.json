@@ -1,6 +1,6 @@
 {
     "name": "nodejs-fu",
-    "version": "0.0.4",
+    "version": "0.1.0",
     "license": "MIT",
     "author": {
         "name": "Francesco Bianco",
@@ -18,9 +18,10 @@
     "devDependencies": {
         "chai": "^3.5.0",
         "chai-fs": "^1.0.0",
-        "mocha": "^3.2.0"
+        "mocha": "^5.2.0"
     },
     "dependencies": {
+        "deepmerge": "^2.1.1",
         "mkdirp": "^0.5.1"
     }
 }

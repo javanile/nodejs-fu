@@ -7,6 +7,7 @@
 
 const fs = require('fs')
     , mkdir = require('mkdirp')
+    , merge = require('deepmerge')
 
 module.exports = {
 
@@ -20,12 +21,14 @@ module.exports = {
     },
 
     /**
+     * Write content into file.
      *
      * @param file
      * @param data
      * @returns {*}
      */
     writeFile: function (file, data) {
+        if (typeof data === 'undefined') { data = '' }
         return fs.writeFileSync(file, data)
     },
 
@@ -50,6 +53,17 @@ module.exports = {
     },
 
     /**
+     * Check if directory exists.
+     *
+     * @param file
+     * @returns {*}
+     */
+    isDir: function (dir) {
+        return this.isDirectory(dir)
+    },
+
+    /**
+     * Create directory recursively only if not exists.
      *
      * @param dir
      */
@@ -60,7 +74,9 @@ module.exports = {
     },
 
     /**
+     * Generic exists file or directory
      *
+     * @param file
      */
     exists: function (file) {
         return fs.existsSync(file)
@@ -73,5 +89,55 @@ module.exports = {
      */
     unlink: function (file) {
         return fs.unlinkSync(file);
+    },
+
+    /**
+     * Rename file
+     *
+     * @param oldPath
+     * @param newPath
+     * @returns {*}
+     */
+    rename: function (oldPath, newPath) {
+        return fs.renameSync(oldPath, newPath);
+    },
+
+    /**
+     * Rename file
+     *
+     * @param oldPath
+     * @param newPath
+     * @returns {*}
+     */
+    readJsonFile: function (file) {
+        return JSON.parse(fs.readFileSync(file, 'utf8'));
+    },
+
+    /**
+     * Rename file
+     *
+     * @param oldPath
+     * @param newPath
+     * @returns {*}
+     */
+    writeJsonFile: function (file, data) {
+        return this.writeFile(file, JSON.stringify(data, null, 4))
+    },
+
+    /**
+     * Rename file
+     *
+     * @param oldPath
+     * @param newPath
+     * @returns {*}
+     */
+    mergeJsonFile: function (file) {
+        var data = {}
+        for (var i in arguments) {
+            if (arguments.hasOwnProperty(i) && this.fileExists(arguments[i])) {
+                data = Object.assign(data, merge(data, this.readJsonFile(arguments[i])));
+            }
+        }
+        this.writeJsonFile(file, data)
     }
 }
