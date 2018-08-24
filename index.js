@@ -6,6 +6,7 @@
  */
 
 const fs = require('fs')
+    , path = require('path')
     , mkdir = require('mkdirp')
     , merge = require('deepmerge')
 
@@ -88,6 +89,7 @@ module.exports = {
      * @param file
      */
     copy: function (src, dest) {
+        this.mkdir(path.dirname(dest))
         return fs.copyFileSync(src, dest)
     },
 
@@ -119,7 +121,11 @@ module.exports = {
      * @returns {*}
      */
     readJsonFile: function (file) {
-        return JSON.parse(fs.readFileSync(file, 'utf8'));
+        try {
+            return JSON.parse(fs.readFileSync(file, 'utf8'))
+        } catch (ex) {
+            return {}
+        }
     },
 
     /**
