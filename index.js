@@ -83,6 +83,15 @@ module.exports = {
     },
 
     /**
+     * Generic exists file or directory
+     *
+     * @param file
+     */
+    copy: function (src, dest) {
+        return fs.copyFileSync(src, dest)
+    },
+
+    /**
      *
      * @param file
      * @returns {*}
