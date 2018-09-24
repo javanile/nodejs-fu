@@ -34,6 +34,18 @@ module.exports = {
     },
 
     /**
+     * Append content into file.
+     *
+     * @param file
+     * @param data
+     * @returns {*}
+     */
+    appendFile: function (file, data) {
+        if (typeof data === 'undefined') { data = '' }
+        return fs.appendFileSync(file, data)
+    },
+
+    /**
      * Check if file exists.
      *
      * @param file
